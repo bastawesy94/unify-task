@@ -15,6 +15,17 @@ toDosRouter.post('/to-do', async (req, res) => {
     }
 });
 
+toDosRouter.get('/to-do/all', async (req, res) => {
+    try {
+        const allToDos = await ToDoSchema.find()
+            .populate("userId")
+        res.send(allToDos)
+    }
+    catch (err) {
+        console.log(err);
+    }
+});
+
 toDosRouter.get('/to-do/:_userId', async (req, res) => {
     const userId = req.params;
     console.log("userId ==> ", userId)
