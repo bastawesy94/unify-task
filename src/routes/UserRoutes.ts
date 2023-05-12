@@ -48,17 +48,30 @@ usersRouter.delete('/users/:_id', async (req, res) => {
   }
 });
 
-usersRouter.put('/users/:_id', async(req, res) => {
+usersRouter.put('/users/:_id', async (req, res) => {
   const userBody = req.body;
   const userId = req.params;
   console.log("userId ==> ", userId)
   try {
-    const user = await UserSchema.findByIdAndUpdate(userId,userBody);
+    const user = await UserSchema.findByIdAndUpdate(userId, userBody);
     res.send(user)
   }
   catch (err) {
     console.log(err);
   }
 });
-
+//user and password auth (basic)
+usersRouter.post('/users/auth', async (req, res) => {
+  const userBody = req.body;
+  try {
+    const user = await UserSchema.find(userBody);
+    console.log("user:",user);
+    if (user.length>0)
+      return res.send("authenticated !")
+    return res.send({ statusCod: 404, msg: "not found" })
+  }
+  catch (err) {
+    console.log(err);
+  }
+});
 export default usersRouter;

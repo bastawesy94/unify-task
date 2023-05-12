@@ -27,16 +27,6 @@ toDosRouter.post('/to-do', (req, res) => __awaiter(void 0, void 0, void 0, funct
         console.log(err);
     }
 }));
-toDosRouter.get('/to-do/all', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const allToDos = yield ToDoSchema.find()
-            .populate("userId");
-        res.send(allToDos);
-    }
-    catch (err) {
-        console.log(err);
-    }
-}));
 toDosRouter.get('/to-do/:_userId', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const userId = req.params;
     console.log("userId ==> ", userId);

@@ -69,4 +69,18 @@ usersRouter.put('/users/:_id', (req, res) => __awaiter(void 0, void 0, void 0, f
         console.log(err);
     }
 }));
+//user and password auth (basic)
+usersRouter.post('/users/auth', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const userBody = req.body;
+    try {
+        const user = yield UserSchema.find(userBody);
+        console.log("user:", user);
+        if (user.length > 0)
+            return res.send("authenticated !");
+        return res.send({ statusCod: 404, msg: "not found" });
+    }
+    catch (err) {
+        console.log(err);
+    }
+}));
 exports.default = usersRouter;
