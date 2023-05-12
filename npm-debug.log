@@ -1,0 +1,65 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'view',
+1 verbose cli   '--json',
+1 verbose cli   '@types/express',
+1 verbose cli   'description',
+1 verbose cli   'dist-tags.latest',
+1 verbose cli   'homepage',
+1 verbose cli   'version',
+1 verbose cli   'time' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly mapToRegistry name @types/express
+5 silly mapToRegistry scope (from package name) @types
+6 verbose mapToRegistry no registry URL found in name for scope @types
+7 silly mapToRegistry using default registry
+8 silly mapToRegistry registry https://tactful-409160330780.d.codeartifact.eu-west-1.amazonaws.com/npm/ucx-repo/
+9 silly mapToRegistry uri https://tactful-409160330780.d.codeartifact.eu-west-1.amazonaws.com/npm/ucx-repo/@types%2fexpress
+10 verbose request uri https://tactful-409160330780.d.codeartifact.eu-west-1.amazonaws.com/npm/ucx-repo/@types%2fexpress
+11 verbose request no auth needed
+12 info attempt registry request try #1 at 1:18:09 PM
+13 verbose request using bearer token for auth
+14 verbose request id 18649f6a29f06c76
+15 http request GET https://tactful-409160330780.d.codeartifact.eu-west-1.amazonaws.com/npm/ucx-repo/@types%2fexpress
+16 http 401 https://tactful-409160330780.d.codeartifact.eu-west-1.amazonaws.com/npm/ucx-repo/@types%2fexpress
+17 verbose headers { date: 'Fri, 12 May 2023 11:18:10 GMT',
+17 verbose headers   'content-type': 'application/json',
+17 verbose headers   'content-length': '107',
+17 verbose headers   connection: 'keep-alive',
+17 verbose headers   'x-amzn-trace-id': 'Root=1-645e2072-76c9a0841ffe98ff796c7aee;',
+17 verbose headers   'content-encoding': 'gzip',
+17 verbose headers   'www-authenticate': 'Bearer realm="tactful/ucx-repo", Basic realm="tactful/ucx-repo"',
+17 verbose headers   'x-amzn-requestid': 'd51e3cd8-ef8e-4782-909b-69aaf52f3780' }
+18 silly get cb [ 401,
+18 silly get   { date: 'Fri, 12 May 2023 11:18:10 GMT',
+18 silly get     'content-type': 'application/json',
+18 silly get     'content-length': '107',
+18 silly get     connection: 'keep-alive',
+18 silly get     'x-amzn-trace-id': 'Root=1-645e2072-76c9a0841ffe98ff796c7aee;',
+18 silly get     'content-encoding': 'gzip',
+18 silly get     'www-authenticate': 'Bearer realm="tactful/ucx-repo", Basic realm="tactful/ucx-repo"',
+18 silly get     'x-amzn-requestid': 'd51e3cd8-ef8e-4782-909b-69aaf52f3780' } ]
+19 verbose stack Error: Unauthenticated: request used expired credentials. Please renew your credentials. : npm
+19 verbose stack     at makeError (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+19 verbose stack     at CachingRegistryClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+19 verbose stack     at /usr/share/npm/node_modules/npm-registry-client/lib/request.js:178:7
+19 verbose stack     at Gunzip.onEnd (zlib.js:131:5)
+19 verbose stack     at emitNone (events.js:111:20)
+19 verbose stack     at Gunzip.emit (events.js:208:7)
+19 verbose stack     at endReadableNT (_stream_readable.js:1064:12)
+19 verbose stack     at _combinedTickCallback (internal/process/next_tick.js:138:11)
+19 verbose stack     at process._tickCallback (internal/process/next_tick.js:180:9)
+20 verbose statusCode 401
+21 verbose pkgid npm
+22 verbose cwd /home/bastawesy/work/unify-task
+23 error Linux 5.4.0-148-generic
+24 error argv "/usr/bin/node" "/usr/bin/npm" "view" "--json" "@types/express" "description" "dist-tags.latest" "homepage" "version" "time"
+25 error node v8.10.0
+26 error npm  v3.5.2
+27 error code E401
+28 error Unauthenticated: request used expired credentials. Please renew your credentials. : npm
+29 error If you need help, you may report this error at:
+29 error     <https://github.com/npm/npm/issues>
+30 verbose exit [ 1, true ]
